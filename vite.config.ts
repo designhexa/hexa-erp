@@ -5,7 +5,16 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 export default defineConfig({
-  plugins: [tanstackRouter(), tanstackStart(), react(), tailwindcss()],
+  plugins: [
+    tanstackRouter({
+      codeSplittingOptions: {
+        addHmr: false,
+      },
+    }),
+    tanstackStart(),
+    react(),
+    tailwindcss(),
+  ],
   server: {
     hmr: {
       overlay: false,
