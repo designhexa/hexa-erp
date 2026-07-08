@@ -6,6 +6,11 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 
 export default defineConfig({
   plugins: [tanstackRouter(), tanstackStart(), react(), tailwindcss()],
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
   resolve: {
     tsconfigPaths: true,
   },
